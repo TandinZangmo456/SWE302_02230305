@@ -1,12 +1,12 @@
 ## SWE5006 Capstone Project: Kahoot Quiz
 
+### Github repository : https://github.com/TandinZangmo456/SWE302_02230305/tree/main/reactquiz
+
 This repository contains the capstone project for SWE5006 - Graduate Certificate in Designing Modern Software Systems (DMSS) at the National University of Singapore (NUS).
 
-### Project Overview
+### Overview
 
 The topic of this project is a Kahoot clone—a real-time, interactive quiz application inspired by the popular Kahoot platform. The goal is to demonstrate modern software design principles and full-stack development skills.
-
----
 
 For setup instructions and further details, see below.
 
@@ -115,8 +115,6 @@ docker run -p 3000:3000 quiz-app
 ```
 
 The app will be available at [http://localhost:3000](http://localhost:3000).
-
----
 
 This project uses React, TypeScript, Vite, Tailwind CSS, and Lucide icons. For more details, see the source code and configuration files.
 
