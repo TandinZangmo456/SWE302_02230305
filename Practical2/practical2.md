@@ -1,5 +1,7 @@
 # Practical 2: Learning Report on Software Testing & Quality Assurance
 
+## Github repository: https://github.com/TandinZangmo456/swe302p2.git
+
 ## Overview
 This practical introduced me to unit testing and code coverage analysis in Go, focusing on testing HTTP handlers for a CRUD (Create, Read, Update, Delete) API. I learned how to write effective tests using Go's standard library without relying on external testing frameworks.
 
@@ -126,3 +128,10 @@ This knowledge is directly applicable to:
 This practical transformed my understanding of testing in Go. I moved from viewing testing as a chore to seeing it as an integral part of development. The visual coverage reports especially help me identify gaps in my testing strategy. Most importantly, I learned that good tests act as documentation, showing how the code should behave in different scenarios.
 
 The combination of Go's standard library tools and clear testing patterns makes writing tests straightforward and effective. I now understand why Go developers emphasize testing so heavily—the tooling makes it easy to do the right thing.
+
+## Proof 
+
+![alt text](<Screenshot from 2025-11-30 12-55-40.png>)
+
+
+![alt text](<Screenshot from 2025-11-30 12-55-49.png>)
