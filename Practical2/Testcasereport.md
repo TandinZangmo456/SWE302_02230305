@@ -1,12 +1,6 @@
 # Test Case Report
 ## Module Practical 2: Software Testing & Quality Assurance
 
-**Project Name:** Go CRUD Testing  
-**Module:** crud-testing  
-**Date:** November 30, 2025  
-**Student Name:** Tandin Zangmo
-
-
 ## Executive Summary
 
 This report documents the unit testing implementation for a Go-based REST API with CRUD (Create, Read, Update, Delete) operations. The project demonstrates comprehensive test coverage using Go's standard testing library and the `httptest` package for HTTP handler testing.

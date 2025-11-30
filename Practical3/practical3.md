@@ -1,5 +1,7 @@
 # Practical 3: Learning Report on Specification-Based Testing in Go
 
+## Github Repository: https://github.com/TandinZangmo456/SWE302p3.git
+
 ## Overview
 This practical introduced me to specification-based testing, also known as black-box testing, where I learned to design comprehensive test cases based solely on system requirements without examining the internal code implementation. I explored three powerful testing techniques: Equivalence Partitioning, Boundary Value Analysis, and Decision Table Testing.
 
@@ -215,3 +217,10 @@ The three techniques—Equivalence Partitioning, Boundary Value Analysis, and De
 Most importantly, I learned that good testing starts before writing code. By analyzing requirements systematically and designing tests first, I can identify ambiguities in specifications early and ensure the implementation truly meets business needs.
 
 The skills gained here are universal—applicable to any programming language, any domain, and any level of system complexity. Specification-based testing is not just about finding bugs; it's about building confidence that software behaves exactly as intended.
+
+
+## Proof
+
+![alt text](<Screenshot from 2025-11-30 13-46-39.png>)
+
+![alt text](<Screenshot from 2025-11-30 14-02-11.png>)
