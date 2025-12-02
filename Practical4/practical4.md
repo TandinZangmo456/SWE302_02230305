@@ -1,5 +1,7 @@
 # Practical 4: Learning Report on SAST with Snyk and GitHub Actions
 
+## Github Repository : https://github.com/TandinZangmo456/cicd-demo.git
+
 ## Overview
 This practical introduced me to Static Application Security Testing (SAST) using Snyk integrated with GitHub Actions. I learned how to automate security vulnerability detection in code and dependencies, making security an integral part of the CI/CD pipeline rather than an afterthought. The hands-on experience with the cicd-demo Spring Boot project provided practical insights into implementing DevSecOps practices.
 

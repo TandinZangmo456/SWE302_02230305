@@ -1,5 +1,7 @@
 # Practical 5: Learning Report on Integration Testing with TestContainers
 
+## Github repository : https://github.com/TandinZangmo456/swe302p5.git
+
 ## Overview
 This practical introduced me to integration testing using TestContainers, a revolutionary approach to testing code that interacts with databases and external services. Unlike the previous practicals that focused on unit testing (Practical 2) and security testing (Practicals 4, 4a, 4b), this practical taught me to test components working together with real dependencies. I learned that effective testing requires multiple layers—unit tests for logic, integration tests for interactions, and end-to-end tests for workflows.
 
@@ -26,12 +28,12 @@ This practical clarified the distinction between different testing levels:
 // Unit test: Function logic is correct
 func TestCalculateTotal(t *testing.T) {
     result := CalculateTotal(10, 5)
-    assert.Equal(t, 15, result) // ✅ Passes
+    assert.Equal(t, 15, result) // Passes
 }
 
 // Integration test: Database interaction fails
 func TestSaveOrder(t *testing.T) {
-    order := SaveOrder(10, 5) // ❌ Fails - SQL syntax error
+    order := SaveOrder(10, 5) // Fails - SQL syntax error
 }
 ```
 
@@ -81,10 +83,10 @@ mock.ExpectQuery("SELECT").WillReturnRows(mockRows)
 **Learning**: Mocks test expectations, not reality. Real database behavior differs from assumptions.
 
 **TestContainers Solution**: Real database in isolated containers
-- ✅ Actual PostgreSQL (same as production)
-- ✅ Each test gets clean state
-- ✅ Tests real SQL queries
-- ✅ Automatic cleanup
+- Actual PostgreSQL (same as production)
+- Each test gets clean state
+- Tests real SQL queries
+- Automatic cleanup
 
 ### 3. TestContainers Architecture and Lifecycle
 
@@ -171,7 +173,7 @@ A critical lesson about distributed system timing:
 **Problem**: Container starts before database is ready
 ```go
 container := startContainer()
-db.Connect() // ❌ Connection refused - DB still initializing
+db.Connect() // Connection refused - DB still initializing
 ```
 
 **Wait Strategy Solution**:
@@ -196,7 +198,7 @@ I learned why static ports don't work in containerized testing:
 ```go
 // Test tries to use port 5432
 container := startContainer(5432)
-// ❌ Error: Port 5432 already in use
+// Error: Port 5432 already in use
 ```
 
 **TestContainers Solution**:
@@ -337,7 +339,7 @@ func TestCreateUser(t *testing.T) {
 // Code that passes unit tests but fails integration
 func Create(email, name string) (*User, error) {
     query := "INSERT INTO users (email, name) VALUES ($1, $2)"
-    // ❌ Forgot RETURNING clause - ID will be zero
+    // Forgot RETURNING clause - ID will be zero
     db.Exec(query, email, name)
     return &User{Email: email, Name: name}, nil
 }
@@ -355,7 +357,7 @@ Working with real databases taught me about resource management:
 func TestSomething(t *testing.T) {
     db := sql.Open(...) // New connection
     // Use db
-    // ❌ Never closed - connection leak
+    // Never closed - connection leak
 }
 ```
 
@@ -530,8 +532,6 @@ docker pull postgres:15-alpine
 
 **Learning**: First run is always slow (image download), subsequent runs are fast (cached). In CI/CD, cache Docker layers.
 
----
-
 **Challenge**: Tests occasionally failed with "connection refused" even though container was running.
 
 **Root Cause**: PostgreSQL container was running but database wasn't ready to accept connections yet.
@@ -544,8 +544,6 @@ wait.ForLog("database system is ready to accept connections").
 
 **Learning**: In distributed systems, "process started" ≠ "service ready". Always implement readiness checks.
 
----
-
 **Challenge**: Tests interfered with each other—Test B failed because Test A's data still existed.
 
 **Solution**: Implemented cleanup with defer:
@@ -555,8 +553,6 @@ defer repo.Delete(user.ID) // Always runs, even if test fails
 ```
 
 **Learning**: Test isolation is critical. Each test should start with known state and clean up after itself.
-
----
 
 **Challenge**: TestContainers couldn't find Docker on macOS.
 
