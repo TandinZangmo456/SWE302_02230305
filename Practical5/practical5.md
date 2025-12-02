@@ -647,3 +647,11 @@ Combined with unit testing (Practical 2), security testing (Practicals 4, 4a, 4b
 This practical provided both technical skills (writing integration tests, managing containers) and strategic understanding (when to integrate vs unit test, how to balance speed vs isolation). The ability to confidently test database interactions is essential for backend development, and TestContainers makes this practical and maintainable.
 
 Most importantly, I learned that good testing isn't about achieving 100% coverage—it's about strategically applying the right testing level at the right time. Unit tests for logic, integration tests for interactions, and end-to-end tests for workflows. Together, they create confidence that software behaves correctly in production.
+
+## Proof 
+
+![alt text](<Screenshot from 2025-12-03 00-32-35.png>)
+
+![alt text](<Screenshot from 2025-12-03 00-33-05.png>)
+
+![alt text](<Screenshot from 2025-12-03 00-34-38.png>)
